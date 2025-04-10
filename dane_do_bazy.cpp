@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream> 
 #include <cstdlib>
 
@@ -25,11 +25,13 @@ int main()
     ofstream Klient("klient.txt");
     ofstream Dostawcy("dostawcy.txt");
 
+    
 
     for (int i = 0; i < 1000; i++) {
         int randomCena = rand() % 16;
+        Cena << "\t";
         Cena << ceny[randomCena];
-        Cena << endl;
+        Cena << "\n";
     }
     Cena.close();
 
@@ -37,23 +39,28 @@ int main()
         int randomImie = rand() % 8;
         int randomNazwisko = rand() % 10;
 
+
+        Klient << "\t";
         Klient << imiona[randomImie];
         Klient << nazwiska[randomNazwisko];
-        Klient << endl; 
+        Klient << "\n";
     }
     Klient.close();
 
     for (int k = 0; k < 1000; k++) {
         int randomDostawca = rand() % 4;
+
+        Dostawcy << "\t";
         Dostawcy << dostawcy[randomDostawca];
-        Dostawcy << endl;
+        Dostawcy << "\n";
     }
     Dostawcy.close();
 
     for (int l = 0; l < 1000; l++) {
         int randomRodzajProjektu = rand() % 5;
+        Rodzaj_projektu << "\t";
         Rodzaj_projektu << rodzaj_projektu[randomRodzajProjektu];
-        Rodzaj_projektu << endl;
+        Rodzaj_projektu << "\n";
     }
     Rodzaj_projektu.close();
 
