@@ -1,0 +1,32 @@
+CREATE TABLE klient (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	imie VARCHAR(50) NOT NULL,
+    nazwisko VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE dostawcy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	dostawca VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE rodzaj_projektu (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	nazwa_projektu VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE cena (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    kwota VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE projekty (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    klient_id INT,
+    dostawcy_id INT,
+    rodzaj_projektu_id INT,
+    cena_id INT,
+    FOREIGN KEY (klient_id) REFERENCES klient(id),
+	FOREIGN KEY (dostawcy_id) REFERENCES dostawcy(id),
+    FOREIGN KEY (rodzaj_projektu_id) REFERENCES rodzaj_projektu(id),
+    FOREIGN KEY (cena_id) REFERENCES cena(id)
+);
