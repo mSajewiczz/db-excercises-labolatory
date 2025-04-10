@@ -30,3 +30,13 @@ CREATE TABLE projekty (
     FOREIGN KEY (rodzaj_projektu_id) REFERENCES rodzaj_projektu(id),
     FOREIGN KEY (cena_id) REFERENCES cena(id)
 );
+
+
+/*
+USE budowa;
+
+LOAD DATA INFILE 'C:/xampp/mysql/data/klient.txt'
+INTO TABLE klient
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n';
+*/
